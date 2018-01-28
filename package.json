@@ -1,0 +1,23 @@
+{
+  "name": "chat-express",
+  "version": "1.0.0",
+  "description": "Express backend for simple B2C chat",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "chat",
+    "b2c"
+  ],
+  "author": "Lauri Hiltunen",
+  "license": "ISC"
+}
