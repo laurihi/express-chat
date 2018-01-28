@@ -4,6 +4,7 @@ const cors =  require('cors');
 var path = require('path');
 
 const app = express()
+app.use(cors())
 
 const chatService = require('./service/chat-service')
 
