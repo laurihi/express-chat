@@ -22,4 +22,8 @@ app.post('/chat/new-chat', (req,res) => {
 
 })
 
+app.post('/chat/:uuid/message', (req,res) => {
+  
+})
+
 app.listen(3000, () => console.log('Listening on port 3000...'))

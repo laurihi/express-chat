@@ -1,4 +1,5 @@
-const uuid = require('uuid/v1');
+const uuid = require('uuid/v1')
+const Chat = require('../model/chat.js')
 
 class ChatService {
 
@@ -11,16 +12,15 @@ class ChatService {
 
   createChat() {
 
-    var chatToken = uuid();
 
-    var result = {
-      chatToken: chatToken,
-      messages: []
-    }
+    var chatToken = uuid()
+    var chat = new Chat(chatToken)
+    console.log(chat)
 
-    this.chatContainer.chat.set(chatToken, result)
+
+    this.chatContainer.chat.set(chatToken, chat)
     this.chatContainer.chatCount += 1
-    return result;
+    return chat;
   }
 
 }
