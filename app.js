@@ -6,7 +6,7 @@ var path = require('path');
 const app = express()
 app.use(cors())
 
-const chatService = require('./service/chat-service')
+const chatService = require('./js/service/chat-service')
 
 
 app.get('/', (req, res) => {
@@ -17,13 +17,15 @@ app.get('/', (req, res) => {
 
 app.post('/chat/new-chat', (req,res) => {
 
-  var createdChat = chatService.createChat()
+  var createdChat
+  createdChat = chatService.createChat()
+
   res.send(createdChat)
 
 })
 
 app.post('/chat/:uuid/message', (req,res) => {
-  
+
 })
 
 app.listen(3000, () => console.log('Listening on port 3000...'))
