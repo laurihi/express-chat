@@ -6,6 +6,9 @@ var path = require('path');
 const app = express()
 app.use(cors())
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}))
+
 const chatService = require('./js/service/chat-service')
 
 
@@ -25,6 +28,12 @@ app.post('/chat/new-chat', (req,res) => {
 })
 
 app.post('/chat/:uuid/message', (req,res) => {
+  var uuid = req.params.uuid;
+  var message = req.body.message
+
+  chatService.newMessage(uuid, message)
+
+  res.send('Message added: "' +message +'"')
 
 })
 

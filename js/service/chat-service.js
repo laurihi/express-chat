@@ -5,8 +5,7 @@ class ChatService {
 
   constructor() {
     this.chatContainer = {
-      chatCount: 0,
-      chat: new Map()
+      chats: new Map()
     }
   }
 
@@ -15,12 +14,17 @@ class ChatService {
 
     var chatToken = uuid()
     var chat = new Chat(chatToken)
-    console.log(chat)
 
 
-    this.chatContainer.chat.set(chatToken, chat)
-    this.chatContainer.chatCount += 1
+    this.chatContainer.chats.set(chatToken, chat)
     return chat;
+  }
+
+
+  newMessage(uuid, message) {
+    var chats = this.chatContainer.chats.get(uuid);
+    chats.messages.push(message);
+
   }
 
 }
