@@ -11,22 +11,18 @@ class ChatService {
 
   createChat() {
 
-
     var chatToken = uuid()
     var chat = new Chat(chatToken)
-
 
     this.chatContainer.chats.set(chatToken, chat)
     return chat;
   }
 
-
   newMessage(uuid, message) {
+
     var chats = this.chatContainer.chats.get(uuid);
     chats.messages.push(message);
-
   }
-
 }
 
 module.exports = new ChatService()
